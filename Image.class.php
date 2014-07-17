@@ -97,7 +97,7 @@ class Image {
 	* $real_width : 图片真实宽度 ，默认为6000
 	* author by ：hongliang（shl3807@gamil.com） by:2014-07-10
 	*/
-	public static function create($str, $font_size = 14 , $font_size_big = 16 ,$font_type = "font/Alido.otf" ,$width = 520 ,$real_width = 640){
+	public static function create($str, $font_size = 14 , $font_size_big = 16 ,$font_type = 'font/simhei.ttf' ,$width = 520 ,$real_width = 640){
 
 		//职位标题高度
 		$title = self::autowrap($font_size_big,0,$font_type,self::cleartag($str["title"]),$width);
