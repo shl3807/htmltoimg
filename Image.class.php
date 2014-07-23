@@ -34,7 +34,7 @@ class Image {
 	    }
 	    //对中文标点特殊处理
 		if(in_array($char,array("；","：","，","。","！","、","？","（","）","“","”"))){
-			$width += floor($fontsize/1.2) ;
+			$width += floor($fontsize/1.2) ;//阀值可以自己修改
 		}
 	    return $width;
 	}
@@ -54,21 +54,18 @@ class Image {
 	            continue;
 	        }
 	        $w = self::charwidth($fontsize,$fontangle,$ttfpath,$v);
-	        //防止因为单个字符串长度大于额定宽度,泥马好复杂
+	        //防止因为单个字符串长度大于额定宽度
 	        if($w > $width){
 	        	$_string .= self::autowrap($fontsize,$fontangle,$ttfpath,$v,$width,$charset='utf-8',false);
 	        	continue;
 	        }
 	        $_width += $w;
-	        //echo $v.'-'.$w.'-'.$_width."<br>";
 	        if (($_width+$fontsize > $width) && ($v !== "")){
 	            $_string .= "\n";
 	            $_width = 0;
 	        }
 	        $_string .= $v;
-	        //echo $v;
 	    }
-	    //$_string = mb_convert_encoding($_string, "html-entities","utf-8" );
 	    return $_string;
 	}
 
@@ -85,7 +82,6 @@ class Image {
 	   		}
 	   		$strArr[] = $value;
 	   	}
-	   	//var_dump($strArr);
 	   	return implode("\n", $strArr);
 	}
 
