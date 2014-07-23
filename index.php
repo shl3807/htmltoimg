@@ -3,6 +3,7 @@
  * @version      : $id:2014-07-10
  * @author       : Hongliang shi <shl3807@gmail.com>
  */
+
 require ('Image.class.php');
 $str['title'] = "上海居住证办理";
 $str['content'] = <<<TEXT
